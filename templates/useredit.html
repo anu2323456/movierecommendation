@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+
+{% block body %}
+
+<div class="container-xl mt-5 mb-5">
+  <div class="row upcome_1 justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="firstname" class="form-label">First Name:</label>
+              <input type="text" name="firstname" class="form-control" id="firstname" value="{{ muser.firstname }}">
+            </div>
+            <div class="mb-3">
+              <label for="lastname" class="form-label">Last Name:</label>
+              <input type="text" name="lastname" class="form-control" id="lastname" value="{{ muser.lastname }}">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email:</label>
+              <input type="email" name="email" class="form-control" id="email" value="{{ muser.email }}">
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label">Description:</label>
+              <textarea name="description" class="form-control" id="description" rows="4">{{ muser.description }}</textarea>
+            </div>
+            <div class="mb-3">
+              <label for="image" class="form-label">Profile pic:</label>
+              <input type="file" name="image" class="form-control" id="image" accept="image/*">
+            </div>
+            <div class="mb-3">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<br>
+
+{% endblock %}

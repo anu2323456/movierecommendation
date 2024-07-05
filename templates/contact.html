@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+
+
+{% block body %}
+
+
+<br>
+<br>
+
+<div style="width: 80%; max-width: 1200px; margin: 20px auto; padding: 20px; background-color: #f9f9f9; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px;">
+
+    <h3>Contact Us</h3>
+    
+    <form style="margin-top: 20px;">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;"><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;"><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;"></textarea><br>
+
+        <button type="submit" style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">Submit</button>
+    </form>
+
+</div>
+<br>
+<br>
+<br>
+<br>
+
+{% endblock %}
+
+

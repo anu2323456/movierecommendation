@@ -1,0 +1,83 @@
+{% extends 'test.html' %}
+
+{% block body %}
+
+<div class="container-xl mt-5 mb-5">
+  <div class="row upcome_1 justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            <div class="mb-3 row">
+              <div class="col">
+                <label for="title" class="form-label">Title:</label>
+                <input type="text" name="title" class="form-control" id="title">
+              </div>
+              <div class="col">
+                <label for="description" class="form-label">Description:</label>
+                <textarea name="description" class="form-control" id="description" rows="4"></textarea>
+              </div>
+            </div>
+            
+            <div class="mb-3 row">
+              <div class="col">
+                <label for="release_date" class="form-label">Release Date:</label>
+                <input type="date" name="release_date" class="form-control" id="release_date">
+              </div>
+              <div class="col">
+                <label for="actors" class="form-label">Actors:</label>
+                <input type="text" name="actors" class="form-control" id="actors">
+              </div>
+            </div>
+            
+            <div class="mb-3 row">
+              <div class="col">
+                <label for="image" class="form-label">Poster:</label>
+                <input type="file" name="image" class="form-control" id="image" accept="image/*">
+              </div>
+              <div class="col">
+                <label for="category" class="form-label">Category:</label>
+                <select name="category" class="form-control" id="category">
+                  {% for category in category %}
+                    <option value="{{ category.id }}">{{ category.category_name }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+            </div>
+            
+            <div class="mb-3 row">
+              <div class="col">
+                <label for="trailerlink" class="form-label">Trailer Link:</label>
+                <input type="url" name="trailerlink" class="form-control" id="trailerlink">
+              </div>
+              <div class="col">
+                <label for="rating" class="form-label">Rating:</label>
+                <select name="rating" class="form-control" id="rating">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="mb-3">
+              <label for="reviews" class="form-label">Reviews:</label>
+              <input type="text" name="reviews" class="form-control" id="reviews">
+            </div>
+            
+            <div class="mb-3">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'test.html' %}
+{% load static %}
+
+<title>Add Blog</title>
+
+<!-- Font special for pages-->
+
+
+{% block body %}
+
+{% for i in category %}
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{i.name}}</h5>
+      <h4 class="card-subtitle mb-2 text-muted">{{i.category_name}}</h4>
+     
+    </div>
+  </div>
+  {% endfor %}
+
+{% endblock %}

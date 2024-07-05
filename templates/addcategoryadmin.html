@@ -1,0 +1,43 @@
+{% extends 'test.html' %}
+{% load static %}
+
+<title>Add Blog</title>
+
+<!-- Font special for pages-->
+
+
+{% block body %}
+
+<div class="page-wrapper bg-grey p-t-20 p-b-50">
+    <div class="wrapper wrapper--w900">
+        <div class="card card-12">
+            <div class="card-body">
+                
+            </div>
+            <div class="card-body">
+                <h4 class="title" style="color:black; align-content: center;">Add Category</h4>
+                    <form method="POST" action="" enctype="multipart/form-data" class="mt-3">
+                        {% csrf_token %}
+                        <div class="form-group row">
+                            <label for="categoryname" class="col-sm-4 col-form-label text-right">Name of Category</label>
+                            <div class="col-sm-8">
+                                <input id="categoryname" class="form-control" type="text" name="categoryname">
+                            </div>
+                        </div>
+    
+                        <div class="text-center mt-4">
+                            <button class="btn btn--radius-2 btn--blue-2" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Jquery JS-->
+    <script src="{% static 'jquery/jquery.min.js' %}"></script>
+    
+    <!-- Main JS-->
+    <script src="{% static 'js/global.js' %}"></script>
+    
+    {% endblock %}

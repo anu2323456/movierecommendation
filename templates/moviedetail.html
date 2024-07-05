@@ -1,0 +1,41 @@
+{% extends 'index.html' %}
+
+{% block body %}
+
+{% if messages %}
+<div class="messages">
+    {% for message in messages %}
+        <div class="message {% if message.tags %}{{ message.tags }}{% endif %}">
+            {{ message }}
+        </div>
+    {% endfor %}
+</div>
+{% endif %}
+<div class="container d-flex justify-content-center align-items-center" style="height: 100vh; padding: 0; margin-top: 20px;">
+  
+    <div class="card mb-3" style="width: 58rem;">
+        <div class="row g-0">
+         
+            <div class="col-md-4">
+                <img src="{{moviedetail.poster.url}}" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">{{moviedetail.title}}</h5>
+                    {% if moviedetail.description %}
+                    <p class="card-text"><h6>Description: </h6>{{moviedetail.description}}</p>
+                    {% endif %}
+                    <p class="card-text mt-auto"><small class="text-body-secondary"><h6>Trailer Link:</h6>{{moviedetail.trailerlink}}</small></p>
+                    <p class="card-text"><h6>Actors:</h6> {{moviedetail.actors}}</p>
+                    <p class="card-text"><h6>Reviews:</h6> {{moviedetail.reviews}}</p>
+                    <div class="d-flex justify-content-between mt-auto">
+                        <a class="btn btn-primary" href="{% url 'movies:movieedit' moviedetail.id %}" title="Edit" data-toggle="tooltip"><i class="bx bx-edit"></i> Edit</a>
+                        <a class="btn btn-danger" href="{% url 'movies:moviedelete' moviedetail.id %}" title="Delete" data-toggle="tooltip"><i class="bx bx-trash"></i> Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

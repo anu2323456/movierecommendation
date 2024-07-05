@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+
+{% block body %}
+
+<div class="container-xl mt-5 mb-5">
+  <div class="row upcome_1 justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="firstname" class="form-label">First Name:</label>
+            <input type="text" id="firstname" class="form-control" value="{{ firstname }}" readonly>
+          </div>
+          <div class="mb-3">
+            <label for="lastname" class="form-label">Last Name:</label>
+            <input type="text" id="lastname" class="form-control" value="{{ lastname }}" readonly>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" id="email" class="form-control" value="{{ email }}" readonly>
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Description:</label>
+            <textarea id="description" class="form-control" rows="4" readonly>{{ description }}</textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+
+
+{% endblock %}
